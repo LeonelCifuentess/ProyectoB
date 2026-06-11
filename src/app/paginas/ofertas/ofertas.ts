@@ -1,0 +1,78 @@
+import { Component } from '@angular/core';
+import { Producto } from '../../models/producto';
+@Component({
+  selector: 'app-ofertas',
+  imports: [],
+  templateUrl: './ofertas.html',
+  styleUrl: './ofertas.css',
+})
+export class Ofertas {
+  ofertas: Producto[] = [
+    {
+      id: 1,
+      disponibilidad: true,
+      marca: 'FORD Mustang',
+      modelo: 'GT Performance',
+      anio: '2025',
+      color: 'azul',
+      img: 'mustang.avif',
+      precio: 1500,
+      cantidad:1,
+    },
+    {
+      id: 1,
+      disponibilidad: true,
+      marca: 'FORD Mustang',
+      modelo: 'GT Performance',
+      anio: '2025',
+      color: 'azul',
+      img: 'mustang.avif',
+      precio: 1500,
+      cantidad:1,
+    },
+    {
+      id: 1,
+      disponibilidad: true,
+      marca: 'FORD Mustang',
+      modelo: 'GT Performance',
+      anio: '2025',
+      color: 'azul',
+      img: 'mustang.avif',
+      precio: 1500,
+      cantidad:1,
+    },
+    {
+      id: 1,
+      disponibilidad: true,
+      marca: 'FORD Mustang',
+      modelo: 'GT Performance',
+      anio: '2025',
+      color: 'azul',
+      img: 'mustang.avif',
+      precio: 1500,
+      cantidad:1,
+    },
+    {
+      id: 1,
+      disponibilidad: true,
+      marca: 'FORD Mustang',
+      modelo: 'GT Performance',
+      anio: '2025',
+      color: 'azul',
+      img: 'mustang.avif',
+      precio: 1500,
+      cantidad:1,
+    },
+    {
+      id: 1,
+      disponibilidad: true,
+      marca: 'FORD Mustang',
+      modelo: 'GT Performance',
+      anio: '2025',
+      color: 'azul',
+      img: 'mustang.avif',
+      precio: 1500,
+      cantidad:1,
+    },
+  ]
+}
