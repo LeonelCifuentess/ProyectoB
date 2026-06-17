@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Producto } from '../../models/producto';
 
 @Component({
   selector: 'app-favoritos',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './favoritos.html',
   styleUrl: './favoritos.css',
 })
-export class Favoritos {}
+export class Favoritos {
+  productosFavoritos: Producto[]= []
+}
