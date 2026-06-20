@@ -1,0 +1,178 @@
+/* ===== Tabla de Carrito ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead tr {
+  background-color: #111111;
+}
+
+.table thead th {
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 3px solid #d10000;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table tbody tr:hover {
+  background-color: #fdecec;
+}
+
+.table tbody td {
+  padding: 12px 16px;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.table tbody td:first-child {
+  font-weight: 600;
+  color: #111111;
+}
+
+/* Precio resaltado */
+.table tbody td:nth-child(4) {
+  color: #d10000;
+  font-weight: 700;
+}
+
+/* ===== Controles de cantidad ===== */
+.table tbody td:nth-child(3) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.table tbody td:nth-child(3) button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table tbody td:nth-child(3) button:hover {
+  background-color: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+/* ===== Botón eliminar ===== */
+.table tbody td button.border-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d10000 !important;
+  border-radius: 50% !important;
+  background-color: #ffffff;
+  color: #d10000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table tbody td button.border-danger:hover {
+  background-color: #d10000;
+  color: #ffffff;
+}
+
+.table tbody td button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== Total ===== */
+h4 {
+  text-align: right;
+  margin: 20px 16px 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+/* ===== Botón Finalizar Compra ===== */
+.btn.btn-success {
+  display: block;
+  margin: 0 16px 20px auto;
+  padding: 12px 28px;
+  background-color: #d10000;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn.btn-success:hover {
+  background-color: #111111;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 4px;
+  }
+
+  .table tbody td::before {
+    font-weight: 600;
+    color: #111111;
+    margin-right: 10px;
+  }
+
+  .table tbody td:nth-child(1)::before { content: "Producto"; }
+  .table tbody td:nth-child(2)::before { content: "Marca"; }
+  .table tbody td:nth-child(3)::before { content: "Cantidad"; }
+  .table tbody td:nth-child(4)::before { content: "Precio"; }
+
+  h4, .btn.btn-success {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}

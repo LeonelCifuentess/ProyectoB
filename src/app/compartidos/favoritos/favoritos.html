@@ -1,12 +1,11 @@
-<table class="table">
+ <table class="table">
     <thead>
         <tr>
             <th scope="col">marca</th>
             <th scope="col">Producto</th>
-            <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
-            <th scope="col">Eliminar</th>
-            <th scope="col">Carrito</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -14,10 +13,10 @@
         <tr>
             <td>{{ p.marca }}</td>
             <td>{{ p.modelo }}</td>
-            <td>{{ p.cantidad }}</td>
+          
             <td>{{ p.precio }}</td>
 
-            <td><button> <!-- boton para eliminar -->
+            <td><button (click)="eliminar(p.id)"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-trash" viewBox="0 0 16 16">
                         <path
@@ -28,7 +27,7 @@
                 </button>
             </td>
             <td>
-                <button> <!-- boton para agregar al carrito -->
+                <button (click)="agregarCarrito(p)"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-cart-plus" viewBox="0 0 16 16">
                         <path
@@ -42,4 +41,5 @@
         }
 
     </tbody>
-</table>
+</table> 
+

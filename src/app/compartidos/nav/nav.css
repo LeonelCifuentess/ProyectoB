@@ -1,41 +1,45 @@
-.navbar{
+.navbar {
   background-color: #000000 !important;
 }
+
 /* Navbar fijo en la parte superior */
 .navbar-fixed-top {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030; /* Superior a la mayoría de elementos */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px); /* Efecto de cristal */
+  z-index: 1030;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.95) !important;
 }
 
 /* Espacio para que el contenido no se superponga con el navbar */
 body {
-  padding-top: 76px; /* Altura aproximada del navbar + margen */
+  padding-top: 76px;
   min-height: 100vh;
 }
 
-/* Mejoras visuales para el navbar */
+/* ===== Marca ===== */
 .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
-  color: #000000 !important;
+  color: #ffffff !important;
   transition: all 0.3s ease;
 }
 
 .navbar-brand:hover {
-  color: #8d0000 !important;
+  color: #8e0000 !important;
   transform: scale(1.05);
 }
 
-.nav-item{
+/* ===== Links de navegación ===== */
+.nav-item {
   list-style: none;
 }
+
 .nav-link {
+  position: relative;
   transition: all 0.3s ease;
   border-radius: 8px;
   margin: 0 5px;
@@ -43,64 +47,130 @@ body {
   color: #ffffff !important;
 }
 
+/* Indicador de sección actual (línea inferior animada) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 2px;
+  height: 2px;
+  background-color: #8e0000;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
 .nav-link:hover {
-  background-color: rgba(13, 110, 253, 0.1);
-  color: #8e0000 !important;
+  background-color: rgba(142, 0, 0, 0.1);
+  color: #ffffff !important;
   transform: translateY(-2px);
 }
 
+/* Estado activo: sección en la que estás parado */
 .nav-link.active {
   background-color: #8e0000;
-  color: white !important;
-  box-shadow: 0 8px 12px rgba(255, 0, 0, 0.3);
-}
-.nav-link.active:hover {
-  background-color: #890000b7;
-  color: #ffffff!important;
-  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(142, 0, 0, 0.4);
 }
 
-/* Dropdown mejorado */
+.nav-link.active::after {
+  transform: scaleX(0); /* ya tiene fondo propio, no necesita la línea */
+}
+
+.nav-link.active:hover {
+  background-color: #a30000;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(142, 0, 0, 0.5);
+}
+
+/* Accesibilidad: foco con teclado visible */
+.nav-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* ===== Dropdown ===== */
 .dropdown-toggle::after {
   transition: all 0.3s ease;
 }
 
 .dropdown-menu {
   border: none;
-  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15); 
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
   border-radius: 12px;
-  margin-top: 10px; 
-} 
+  margin-top: 10px;
+  background-color: #000000;
+  overflow: hidden;
+}
 
 .dropdown-item {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   background-color: #000000;
   color: #ffffff;
 }
 
-.dropdown-item:hover {
-  background-color:#8e0000;
-  padding-left: 20px; 
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #8e0000;
+  padding-left: 24px;
   color: #ffffff;
+}
+
+.dropdown-item.active {
+  background-color: #8e0000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ===== Botón hamburguesa (mobile) ===== */
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(142, 0, 0, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ===== Badge del carrito (opcional, si tenés un contador) ===== */
+.nav-link .badge {
+  background-color: #8e0000;
+  color: #ffffff;
+  font-size: 0.65rem;
+  position: relative;
+  top: -8px;
+  margin-left: 2px;
 }
 
 /* Responsive */
 @media (max-width: 991px) {
   body {
     padding-top: 70px;
-
   }
-  
+
   .navbar-collapse {
     background-color: rgba(0, 0, 0, 0.98);
     border-radius: 12px;
     margin-top: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   .nav-link {
     margin: 5px 0 !important;
-    color: #ffffff ;
+    color: #ffffff;
+  }
+
+  .nav-link::after {
+    display: none; /* la línea inferior no se ve bien en columna, mejor solo el fondo */
   }
 }
 

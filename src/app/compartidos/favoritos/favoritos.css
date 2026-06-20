@@ -1,0 +1,129 @@
+/* ===== Tabla de Favoritos ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Encabezado */
+.table thead tr {
+  background-color: #111111;
+}
+
+.table thead th {
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 3px solid #d10000;
+}
+
+/* Filas del cuerpo */
+.table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table tbody tr:hover {
+  background-color: #fdecec;
+}
+
+.table tbody td {
+  padding: 12px 16px;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+/* Columna marca en negrita */
+.table tbody td:first-child {
+  font-weight: 600;
+  color: #111111;
+}
+
+/* Columna precio resaltada */
+.table tbody td:nth-child(3) {
+  color: #d10000;
+  font-weight: 700;
+}
+
+/* ===== Botones de acciones ===== */
+.table tbody td button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table tbody td button:hover {
+  background-color: #d10000;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* Botón eliminar (trash) con estilo distinto al pasar el mouse */
+.table tbody td:nth-child(4) button:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Botón agregar al carrito */
+.table tbody td:nth-child(5) button:hover {
+  background-color: #d10000;
+  color: #ffffff;
+}
+
+/* Iconos SVG */
+.table tbody td button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 4px;
+  }
+
+  .table tbody td::before {
+    font-weight: 600;
+    color: #111111;
+    margin-right: 10px;
+  }
+
+  .table tbody td:nth-child(1)::before { content: "Marca"; }
+  .table tbody td:nth-child(2)::before { content: "Producto"; }
+  .table tbody td:nth-child(3)::before { content: "Precio"; }
+}

@@ -1,3 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+/* src/styles.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.card.fijo-abajo {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 40px 0 0 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
 

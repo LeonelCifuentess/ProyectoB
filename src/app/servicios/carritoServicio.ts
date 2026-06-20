@@ -98,5 +98,14 @@ export class CarritoService {
 
   }
 
+  calcularTotal(): number {
+  let total = 0;
+
+  this.carrito.forEach(producto => {
+    total += producto.precio * producto.cantidad;
+  });
+
+  return total;
+}
 
 }

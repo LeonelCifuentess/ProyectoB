@@ -1,7 +1,7 @@
 <table class="table">
   <thead>
     <tr>
-      
+
       <th scope="col">Producto</th>
       <th scope="col">Marca</th>
       <th scope="col">Cantidad</th>
@@ -12,16 +12,26 @@
   <tbody>
 
     @for(p of productosCarrito; track p.id) {
-
-
     <tr>
       <td>{{ p.modelo }}</td>
       <td>{{ p.marca }}</td>
-      <td>{{ p.cantidad }}</td>
+      <td>
+        <button (click)="disminuirCantidad(p.id)"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg></button>
+        {{ p.cantidad }}
+        <button (click)="aumentarCantidad(p.id)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path
+              d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg></button>
+      </td>
       <td>{{ p.precio }}</td>
 
-      <td><button class="border-danger rounded mx-2"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+      <td><button class="border-danger rounded mx-2" (click)="eliminar(p.id)"> <svg xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
             <path
               d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
             <path
@@ -34,5 +44,12 @@
     }
 
 
+
   </tbody>
 </table>
+<h4>Total: ${{ calcularTotal() }}</h4>
+
+<button class="btn btn-success" (click)="finalizarCompra()">
+  Finalizar compra
+</button>
+

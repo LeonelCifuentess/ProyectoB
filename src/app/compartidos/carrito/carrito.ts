@@ -27,7 +27,7 @@ export class Carrito implements OnInit {
   }
 
 
-  eliminarProducto(id: number): void {
+  eliminar(id: number): void {
 
 
     this.carritoServicio.eliminarProducto(id);
@@ -66,4 +66,16 @@ export class Carrito implements OnInit {
       this.carritoServicio.obtenerProductos();
 
   }
+  calcularTotal(): number {
+  return this.carritoServicio.calcularTotal();
+}
+
+finalizarCompra() {
+   let cantidadProductos = 0;
+
+  this.productosCarrito.forEach(producto => {
+    cantidadProductos += producto.cantidad;
+  });
+  alert("Total de la compra: $" + this.calcularTotal()+"\ncantidad de productos: "+cantidadProductos);
+}
 }

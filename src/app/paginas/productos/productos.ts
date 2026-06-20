@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../models/producto';
 import { CarritoService } from '../../servicios/carritoServicio';
+import { FavoritoServicio } from '../../servicios/favorito-servicio';
+
 @Component({
   selector: 'app-productos',
   imports: [],
@@ -8,7 +10,9 @@ import { CarritoService } from '../../servicios/carritoServicio';
   styleUrl: './productos.css',
 })
 export class Productos {
-  constructor(private carritoService: CarritoService) { }
+  constructor(private carritoService: CarritoService,
+    private favoritoServicio: FavoritoServicio
+  )  { }
 
   Productos: Producto[] = [
     {
@@ -84,5 +88,12 @@ export class Productos {
   agregarCarrito(p: Producto) {
     this.carritoService.agregarCarrito(p);
   }
+  //llama al servicio para agregar
+  agregarFavorito(p: Producto){
+  
+    this.favoritoServicio.agregarFavorito(p);
+
+  }
+  
 
 }

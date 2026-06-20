@@ -1,60 +1,68 @@
-/* FOOTER FIJO ABAJO */
-.card.fijo-abajo {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+/* ===== HTML / BODY: estructura sticky footer ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 76px; /* espacio para el navbar fijo */
+}
+
+/* El contenido principal (router-outlet / main) ocupa el espacio sobrante */
+main {
+  flex: 1 0 auto;
+}
+
+/* ===== FOOTER: ya NO fijo, se mueve con la página ===== */
+.card.fijo-abajo {
   width: 100%;
   max-width: 100%;
-
-  margin: 0;
-
-  border-radius: 15px 15px 0 0;
-
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
-
-  z-index: 1050;
-
-  background-color: rgba(255,255,255,0.95);
-
-  backdrop-filter: blur(10px);
+  margin: 40px 0 0 0; /* separación del contenido de arriba */
+  border: none;
+  border-radius: 0; /* ocupa todo el ancho, no tiene sentido redondear */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  flex-shrink: 0;
 }
 
-/* BODY MÁS CHICO */
-.card-body {
-  padding: 10px;
-}
-
-/* HEADER MÁS BAJO */
+/* ===== HEADER ===== */
 .card-header {
   background: linear-gradient(135deg, #ac1111 0%, #000000 100%);
-  color: white !important;
-
-  font-weight: 600;
-
-  padding: 8px;
-
-  border-radius: 15px 15px 0 0 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 14px;
+  border-radius: 0;
+  border-bottom: 3px solid #8e0000;
 }
 
-/* TÍTULO */
+/* ===== BODY DE LA CARD ===== */
+.card-body {
+  padding: 28px 16px 20px;
+  background-color: #ffffff;
+}
+
+/* ===== TÍTULO ===== */
 .card-title {
   font-weight: 700;
-  font-size: 1.05rem;
-
-  margin-bottom: 5px;
-
-  color: #000000 !important;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  color: #111111 !important;
 }
 
-/* TEXTO */
+/* ===== TEXTO ===== */
 .card-text {
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  color: #444444;
 }
 
-/* BOTÓN */
+/* ===== BOTÓN ===== */
 .btn {
   background-color: #8e0000;
   border: none;
@@ -62,38 +70,27 @@
 
 .btn-primary {
   border-radius: 25px;
-
-  padding: 5px 18px;
-
-  font-size: 0.85rem;
-
+  padding: 8px 28px;
+  font-size: 0.9rem;
   font-weight: 600;
-
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
-
-  box-shadow: 0 4px 15px rgba(127, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(142, 0, 0, 0.35);
 }
 
 .btn-primary:hover {
   background-color: #000000;
-
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* FOOTER */
+/* ===== FOOTER (fecha) ===== */
 .card-footer {
-  background-color: rgba(248, 249, 250, 0.8);
-
+  background-color: #111111;
   border: none;
-
   font-size: 0.75rem;
-
-  padding: 5px;
-}
-
-/* ESPACIO PARA QUE NO TAPE CONTENIDO */
-body {
-  padding-bottom: 95px;
-  padding-top: 76px;
-  min-height: 100vh;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  letter-spacing: 0.5px;
 }
