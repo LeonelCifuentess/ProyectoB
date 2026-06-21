@@ -24,3 +24,8 @@
   padding: 10px;
   font-weight: 600;
 }
+.precio-oferta-num {
+  margin: 0; /* el h2 trae margin por defecto, lo sacamos para que no desalinee el flex */
+  color: #000000;
+  font-weight: 700;
+}

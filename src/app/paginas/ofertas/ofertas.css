@@ -24,3 +24,64 @@
   padding: 10px;
   font-weight: 600;
 }
+.precio-anterior {
+  text-decoration: line-through;
+  text-decoration-color: #8e0000; /* la raya en rojo en vez de negro, se nota más */
+  text-decoration-thickness: 2px;
+  color: #888888;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  font-weight: 400;
+}
+ .badge-descuento {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background-color: #d10000;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px 4px 14px;
+  margin-left: 10px;
+  vertical-align: middle;
+  letter-spacing: 0.3px;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+}
+.precio-oferta-linea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.precio-oferta-num {
+  margin: 0; /* el h2 trae margin por defecto, lo sacamos para que no desalinee el flex */
+  color: #000000;
+  font-weight: 700;
+}
+
+.precio-anterior {
+  text-decoration: line-through;
+  text-decoration-color: #8e0000;
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+/* .badge-descuento {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #d10000 0%, #8e0000 100%);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(142, 0, 0, 0.4);
+  white-space: nowrap;
+} */
+
+.precio-normal {
+  margin: 0;
+  color: #111111;
+  font-weight: 700;
+}
