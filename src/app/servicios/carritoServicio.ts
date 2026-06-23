@@ -99,13 +99,20 @@ export class CarritoService {
   }
 
   calcularTotal(): number {
-  let total = 0;
+    let total = 0;
 
-  this.carrito.forEach(producto => {
-    total += producto.precio * producto.cantidad;
-  });
+    this.carrito.forEach(producto => {
+      if (producto.precioOferta) {
+        total += producto.precioOferta * producto.cantidad;
+      } else{ 
 
-  return total;
-}
+        total += producto.precio * producto.cantidad;
+      }
+      
+
+    });
+
+    return total;
+  }
 
 }

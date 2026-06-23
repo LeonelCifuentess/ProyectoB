@@ -13,8 +13,12 @@
         <tr>
             <td>{{ p.marca }}</td>
             <td>{{ p.modelo }}</td>
-          
+          @if (p.precioOferta) {
+            <td>{{p.precioOferta}}</td>
+          }@else {
             <td>{{ p.precio }}</td>
+          }
+            
 
             <td><button (click)="eliminar(p.id)"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

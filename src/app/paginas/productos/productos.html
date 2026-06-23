@@ -1,6 +1,9 @@
 <div class="container py-4">
   <div class="row g-4">
+@if(mensaje){
+  <div class="mini-mensaje">{{ mensaje }}</div>
 
+            }
     @for (p of Productos; track p.id) {
     @if (p.disponibilidad) {
 
@@ -31,6 +34,7 @@
               <h2 class="precio-oferta-num">${{ p.precio }} USD</h2>
           </ul>
           <button class="btn btn-dark w-100 mt-3" (click)="agregarCarrito(p)">
+            
              agregar al carrito
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
               viewBox="0 0 16 16">
@@ -62,15 +66,3 @@
   </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

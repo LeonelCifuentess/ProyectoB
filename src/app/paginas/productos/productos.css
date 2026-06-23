@@ -29,3 +29,19 @@
   color: #000000;
   font-weight: 700;
 }
+.mini-mensaje {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: fit-content;
+  max-width: 260px;
+  background-color: #111111;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-left: 3px solid #8e0000;
+  opacity: 0.95;
+}

@@ -1,14 +1,17 @@
-
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/concesionariofw.jpeg" height="300" width="100%" alt="...">
+      <img src="assets/concesionariofw.jpeg" class="d-block w-100" alt="Concesionaria Federic Wheels">
+      <div class="carousel-caption">
+        <h1>Federic Wheels</h1>
+        <p>Tus autos al mejor precio</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="assets/mustang.avif" class="d-block w-100" alt="...">
+      <img src="assets/mustang.avif" class="d-block w-100" alt="Mustang">
     </div>
     <div class="carousel-item">
-      <img src="assets/mustang2.jpg" class="d-block w-100" alt="...">
+      <img src="assets/mustang2.jpg" class="d-block w-100" alt="Mustang">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -20,4 +23,45 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<!-- Accesos rápidos -->
+<section class="accesos">
+  <a routerLink="/productos" class="acceso-card">
+    <h3>Productos</h3>
+    <p>Mirá todo el catálogo</p>
+  </a>
+  <a routerLink="/ofertas" class="acceso-card">
+    <h3>Ofertas</h3>
+    <p>Los mejores descuentos</p>
+  </a>
+  <a routerLink="/favoritos" class="acceso-card">
+    <h3>Favoritos</h3>
+    <p>Tus autos guardados</p>
+  </a>
+</section>
+
+<!-- Por qué elegirnos -->
+<section class="beneficios">
+  <h2>¿Por qué elegirnos?</h2>
+  <div class="beneficios-grid">
+    <div class="beneficio">
+      <h4>Mejor precio</h4>
+      <p>Ofertas y descuentos todas las semanas.</p>
+    </div>
+    <div class="beneficio">
+      <h4>Autos verificados</h4>
+      <p>Todos nuestros vehículos pasan control de calidad.</p>
+    </div>
+    <div class="beneficio">
+      <h4>Atención personalizada</h4>
+      <p>Te ayudamos a elegir el auto que necesitás.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to action -->
+<section class="cta">
+  <h2>¿Listo para encontrar tu próximo auto?</h2>
+  <a routerLink="/productos" class="cta-btn">Ver catálogo</a>
+</section>
 
